@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="slides-format" content="viewport" />
+  <title>Jennifer Doudna — A Hero of Our Times</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #081217;
+      --color-bg-deep: #050b0f;
+      --color-surface: #0f1d24;
+      --color-text: #f3f7f8;
+      --color-text-secondary: #c8d7dc;
+      --color-text-muted: #8ea5ad;
+      --color-accent-1: #69d2cf;
+      --color-accent-2: #2f7f95;
+      --color-accent-3: #d9c07b;
+      --color-glass-bg: rgba(255,255,255,0.06);
+      --color-glass-border: rgba(255,255,255,0.11);
+      --color-vignette: rgba(0,0,0,0.45);
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Manrope', sans-serif;
+    }
+  </style>
+  <style>
+    :root{--color-bg:#081217;--color-text:#f3f7f8;--glow-color-rgb:105,210,207}
+    *,*::before,*::after{box-sizing:border-box}html,body{background:var(--color-bg);margin:0}body{font-family:var(--font-body);color:var(--color-text);overflow:hidden;height:100vh;width:100vw}.deck{width:100vw;height:100vh;position:relative}.slide{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top left, #0d2028 0%, #081217 45%, #050b0f 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:scale(.96);transition:opacity .7s ease,transform .7s ease;pointer-events:none;overflow:hidden}.slide.active{opacity:1;transform:scale(1);pointer-events:all}.slide>.content{position:relative;z-index:2;width:100%;max-width:1240px;padding:clamp(1.5rem,3vw,3rem)}
+    .nav-controls{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;z-index:100;background:rgba(255,255,255,.06);backdrop-filter:blur(14px);padding:10px 22px;border-radius:40px;border:1px solid rgba(255,255,255,.11);box-shadow:0 18px 50px rgba(0,0,0,.24)}.nav-btn{width:40px;height:40px;border:none;background:rgba(105,210,207,.10);color:var(--color-accent-1);border-radius:50%;font-size:1.2rem;cursor:pointer}.slide-dots{display:flex;gap:8px}.slide-dots .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.16);cursor:pointer;transition:all .25s ease}.slide-dots .dot.active{background:var(--color-accent-1);transform:scale(1.25)}.slide-counter{font-size:.8rem;color:var(--color-text-muted);min-width:48px;text-align:center}.reveal{opacity:0;transform:translateY(20px)}
+    .gradient-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}.blob{position:absolute;border-radius:50%;filter:blur(95px);animation:float-slow 16s ease-in-out infinite}.blob:nth-child(2){animation:float-drift 20s ease-in-out infinite}.blob:nth-child(3){animation:float-slow 24s ease-in-out infinite reverse}@keyframes float-slow{0%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.10)}50%{transform:translate(-35px,25px) scale(.94)}100%{transform:translate(0,0) scale(1)}}@keyframes float-drift{0%{transform:translate(0,0) scale(1)}33%{transform:translate(-55px,-55px) scale(1.15)}66%{transform:translate(35px,25px) scale(.90)}100%{transform:translate(0,0) scale(1)}}
+    .slide::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-repeat:repeat;background-size:240px 240px;opacity:.03;mix-blend-mode:screen}.slide::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 48%,var(--color-vignette) 100%)}
+    .card{background:var(--color-glass-bg);backdrop-filter:blur(18px);border:1px solid var(--color-glass-border);border-radius:28px;box-shadow:0 24px 70px rgba(0,0,0,.28)}.frame{border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.10);box-shadow:0 30px 90px rgba(0,0,0,.35);background:#0d1720}.headline{font-family:var(--font-display);line-height:.93;letter-spacing:-.025em}.section-label{letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent-1);font-size:.78rem;font-weight:800}.source{font-size:.72rem;color:var(--color-text-muted);letter-spacing:.04em}.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.48rem .85rem;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);font-size:.8rem;color:var(--color-text-secondary)}
+    .cover-img,.poster{width:100%;height:100%;object-fit:cover}.diagram{width:100%;height:100%;object-fit:contain;background:linear-gradient(180deg,#fbfbfb,#dfe7ea)}
+    .split{display:grid;grid-template-columns:1.08fr .92fr;gap:28px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.four{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .metric{font-size:3rem;font-weight:800;color:var(--color-accent-1);line-height:1}.mini{font-size:.9rem;color:var(--color-text-muted);line-height:1.45}.muted{color:var(--color-text-secondary)}.gold{color:var(--color-accent-3)}.line{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+    .quote{font-family:var(--font-display);font-size:2rem;line-height:1.1}.bar-track{height:16px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--color-accent-1),var(--color-accent-3));width:0%}
+    .slide-1 .content{max-width:1300px}.slide-1 .hero-panel{height:78vh}.slide-3 .visual{height:66vh}.slide-7 .visual{height:64vh}
+    @media (max-width: 1100px){.split,.three,.four{grid-template-columns:1fr}.slide-1 .hero-panel,.slide-3 .visual,.slide-7 .visual{height:40vh}}
+  </style>
+</head>
+<body>
+<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none"></div>
+<div class="deck">
+
+<section class="slide slide-1 active" data-slide="1">
+  <div class="gradient-mesh"><div class="blob" style="width:520px;height:520px;right:-120px;top:-100px;background:var(--color-accent-2);opacity:.17"></div><div class="blob" style="width:320px;height:320px;left:-80px;bottom:-80px;background:var(--color-accent-3);opacity:.11"></div><div class="blob" style="width:220px;height:220px;left:16%;top:18%;background:var(--color-accent-1);opacity:.11"></div></div>
+  <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1"></canvas>
+  <div class="content">
+    <div class="split items-center">
+      <div class="reveal">
+        <div class="eyebrow mb-6">Hero of Our Times • Science • Ethics</div>
+        <h1 class="headline text-[clamp(3.8rem,8vw,6.8rem)] mb-5">Jennifer<br>Doudna</h1>
+        <div class="line mb-5"></div>
+        <p class="text-[clamp(1.05rem,1.8vw,1.32rem)] max-w-xl muted">The scientist behind one of the most powerful tools in modern biology — and one of the clearest voices for responsibility in science.</p>
+      </div>
+      <div class="reveal">
+        <div class="frame hero-panel relative">
+          <img class="cover-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Jennifer_Doudna_by_Christopher_Michel_in_2023_01.jpg/960px-Jennifer_Doudna_by_Christopher_Michel_in_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Jennifer Doudna portrait" />
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(8,18,23,.24))"></div>
+        </div>
+        <div class="source mt-3">Image: Wikimedia Commons / Christopher Michel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-slide="2">
+  <div class="gradient-mesh"><div class="blob" style="width:360px;height:360px;right:-90px;top:-80px;background:var(--color-accent-2);opacity:.11"></div><div class="blob" style="width:260px;height:260px;left:-60px;bottom:-70px;background:var(--color-accent-1);opacity:.08"></div></div>
+  <div class="content">
+    <p class="section-label reveal">Biography</p>
+    <h2 class="headline text-[clamp(2.8rem,5.5vw,4.6rem)] mb-7 reveal">A life built on curiosity</h2>
+    <div class="four">
+      <div class="card p-6 reveal"><div class="metric mb-3">1964</div><div class="font-semibold mb-2">born</div><div class="mini">Washington, D.C.</div></div>
+      <div class="card p-6 reveal"><div class="metric mb-3">Hilo</div><div class="font-semibold mb-2">childhood</div><div class="mini">Hawaii, nature, reading</div></div>
+      <div class="card p-6 reveal"><div class="metric mb-3">Harvard</div><div class="font-semibold mb-2">PhD</div><div class="mini">advanced molecular research</div></div>
+      <div class="card p-6 reveal"><div class="metric mb-3">Berkeley</div><div class="font-semibold mb-2">career</div><div class="mini">chemistry + cell biology</div></div>
+    </div>
+    <div class="card p-7 mt-6 reveal"><div class="text-xl muted">Early curiosity, strong education, and long-term research shaped Doudna’s career.</div></div>
+  </div>
+</section>
+
+<section class="slide slide-3" data-slide="3">
+  <div class="gradient-mesh"><div class="blob" style="width:380px;height:380px;right:-90px;top:-100px;background:var(--color-accent-1);opacity:.10"></div><div class="blob" style="width:260px;height:260px;left:-70px;bottom:-70px;background:var(--color-accent-3);opacity:.09"></div></div>
+  <div class="content">
+    <p class="section-label reveal">Breakthrough</p>
+    <h2 class="headline text-[clamp(2.9rem,5.6vw,4.8rem)] mb-6 reveal">CRISPR-Cas9</h2>
+    <div class="split">
+      <div class="frame visual reveal"><img class="diagram" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/CRISPR_Cas9.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="CRISPR Cas9 gene editing diagram" /></div>
+      <div class="space-y-5">
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">What it is</div><div class="mini">A method for precise genome editing.</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">Why it matters</div><div class="mini">It made gene editing faster, simpler, and more usable in labs around the world.</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">Key date</div><div class="mini">2012 — Doudna and Charpentier publish the landmark work.</div></div>
+        <div class="source reveal">Image: Wikimedia Commons, CRISPR Cas9 diagram</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-slide="4">
+  <div class="gradient-mesh"><div class="blob" style="width:340px;height:340px;right:-80px;top:-80px;background:var(--color-accent-2);opacity:.10"></div><div class="blob" style="width:230px;height:230px;left:-50px;bottom:-60px;background:var(--color-accent-3);opacity:.07"></div></div>
+  <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1"></canvas>
+  <div class="content">
+    <p class="section-label reveal">Recognition</p>
+    <h2 class="headline text-[clamp(2.9rem,5.5vw,4.7rem)] mb-7 reveal">The Nobel Prize</h2>
+    <div class="three">
+      <div class="card p-7 reveal"><div class="metric mb-3">2020</div><div class="font-semibold mb-2">Chemistry</div><div class="mini">awarded for genome editing</div></div>
+      <div class="card p-7 reveal"><div class="metric mb-3">2</div><div class="font-semibold mb-2">laureates</div><div class="mini">Doudna + Charpentier</div></div>
+      <div class="card p-7 reveal"><div class="metric mb-3 gold">Nobel</div><div class="font-semibold mb-2">official wording</div><div class="mini">“for the development of a method for genome editing”</div></div>
+    </div>
+    <div class="source mt-4 reveal">Fact source: NobelPrize.org</div>
+  </div>
+</section>
+
+<section class="slide" data-slide="5">
+  <div class="gradient-mesh"><div class="blob" style="width:330px;height:330px;right:-90px;top:-90px;background:var(--color-accent-1);opacity:.09"></div><div class="blob" style="width:240px;height:240px;left:-60px;bottom:-70px;background:var(--color-accent-2);opacity:.08"></div></div>
+  <div class="content">
+    <p class="section-label reveal">Impact</p>
+    <h2 class="headline text-[clamp(2.9rem,5.5vw,4.8rem)] mb-7 reveal">Why this discovery matters</h2>
+    <div class="grid grid-cols-[1.15fr_.85fr] gap-6">
+      <div class="grid grid-cols-2 gap-5">
+        <div class="card p-7 reveal"><div class="font-semibold text-xl mb-2">Medicine</div><div class="mini">genetic disease, cancer research, targeted therapies</div></div>
+        <div class="card p-7 reveal"><div class="font-semibold text-xl mb-2">Agriculture</div><div class="mini">crop traits, resilience, food systems</div></div>
+        <div class="card p-7 reveal"><div class="font-semibold text-xl mb-2">Research</div><div class="mini">faster testing of gene function</div></div>
+        <div class="card p-7 reveal"><div class="font-semibold text-xl mb-2">Society</div><div class="mini">law, ethics, and public responsibility</div></div>
+      </div>
+      <div class="card p-8 reveal flex flex-col justify-center">
+        <div class="metric mb-3">4</div>
+        <div class="font-semibold text-xl mb-2">major spheres</div>
+        <div class="mini">science, health, food, ethics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-slide="6">
+  <div class="gradient-mesh"><div class="blob" style="width:360px;height:360px;right:-90px;top:-90px;background:var(--color-accent-2);opacity:.11"></div><div class="blob" style="width:260px;height:260px;left:-70px;bottom:-60px;background:var(--color-accent-3);opacity:.08"></div></div>
+  <div class="content">
+    <p class="section-label reveal">Ethics</p>
+    <h2 class="headline text-[clamp(2.9rem,5.5vw,4.8rem)] mb-7 reveal">Not just discovery.<br>Responsibility.</h2>
+    <div class="grid grid-cols-[.9fr_1.1fr] gap-6">
+      <div class="card p-8 reveal">
+        <div class="quote mb-4">Doudna’s public role was not only scientific. It was also ethical.</div>
+        <div class="mini">Doudna argued for public discussion and ethical limits in gene editing.</div>
+      </div>
+      <div class="three">
+        <div class="card p-6 reveal"><div class="font-semibold text-lg mb-2">embryos</div><div class="mini">serious moral question</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-lg mb-2">debate</div><div class="mini">society must be involved</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-lg mb-2">limits</div><div class="mini">science needs boundaries</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide slide-7" data-slide="7">
+  <div class="gradient-mesh"><div class="blob" style="width:360px;height:360px;right:-100px;top:-90px;background:var(--color-accent-1);opacity:.10"></div><div class="blob" style="width:260px;height:260px;left:-60px;bottom:-70px;background:var(--color-accent-3);opacity:.10"></div></div>
+  <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1"></canvas>
+  <div class="content">
+    <p class="section-label reveal">Literary context</p>
+    <h2 class="headline text-[clamp(2.9rem,5.4vw,4.7rem)] mb-6 reveal">Doctor Rieux<br>from <em>The Plague</em></h2>
+    <div class="split items-center">
+      <div class="reveal">
+        <div class="frame visual relative"><img class="cover-img" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/La_Peste_book_cover.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="La Peste first edition cover" /></div>
+        <div class="source mt-3">Image: Wikimedia Commons, first edition cover of <em>La Peste</em></div>
+      </div>
+      <div class="space-y-5">
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">Who is he?</div><div class="mini">A physician who fights suffering during the plague in Oran.</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">Why compare him?</div><div class="mini">He represents duty, restraint, courage, and service.</div></div>
+        <div class="card p-6 reveal"><div class="font-semibold text-xl mb-2">Main link</div><div class="mini">Like Doudna, he uses knowledge to defend human life.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-slide="8">
+  <div class="gradient-mesh"><div class="blob" style="width:350px;height:350px;right:-90px;top:-90px;background:var(--color-accent-2);opacity:.10"></div><div class="blob" style="width:250px;height:250px;left:-50px;bottom:-60px;background:var(--color-accent-1);opacity:.08"></div></div>
+  <div class="content">
+    <p class="section-label reveal">Comparison</p>
+    <h2 class="headline text-[clamp(2.9rem,5.5vw,4.8rem)] mb-7 reveal">Similar values.<br>Different realities.</h2>
+    <div class="grid grid-cols-2 gap-6">
+      <div class="card p-8 reveal">
+        <h3 class="text-2xl font-semibold mb-5">Similarities</h3>
+        <div class="space-y-5">
+          <div><div class="flex justify-between mb-1"><span class="font-semibold">Duty</span><span>96%</span></div><div class="bar-track"><div class="bar-fill" data-width="96"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="font-semibold">Reason</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" data-width="92"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="font-semibold">Service</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" data-width="95"></div></div></div>
+        </div>
+      </div>
+      <div class="card p-8 reveal">
+        <h3 class="text-2xl font-semibold mb-5">Differences</h3>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card p-5" style="background:rgba(255,255,255,.04)"><div class="font-semibold mb-2">Doudna</div><div class="mini">real scientist; future of gene editing; global impact</div></div>
+          <div class="card p-5" style="background:rgba(255,255,255,.04)"><div class="font-semibold mb-2">Rieux</div><div class="mini">fictional doctor; present epidemic; direct patient care</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-slide="9">
+  <div class="gradient-mesh"><div class="blob" style="width:440px;height:440px;right:-110px;top:-100px;background:var(--color-accent-2);opacity:.14"></div><div class="blob" style="width:300px;height:300px;left:-80px;bottom:-80px;background:var(--color-accent-3);opacity:.11"></div><div class="blob" style="width:220px;height:220px;left:20%;top:20%;background:var(--color-accent-1);opacity:.10"></div></div>
+  <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1"></canvas>
+  <div class="content text-center">
+    <p class="section-label reveal">Evaluation</p>
+    <h2 class="headline text-[clamp(3.2rem,5.8vw,5.1rem)] mb-7 reveal">A hero of our times</h2>
+    <div class="three mb-6">
+      <div class="card p-7 reveal"><div class="metric mb-3">01</div><div class="font-semibold text-xl mb-2">brilliant</div><div class="mini">changed modern biology</div></div>
+      <div class="card p-7 reveal"><div class="metric mb-3">02</div><div class="font-semibold text-xl mb-2">ethical</div><div class="mini">warned about misuse</div></div>
+      <div class="card p-7 reveal"><div class="metric mb-3">03</div><div class="font-semibold text-xl mb-2">global</div><div class="mini">science, medicine, society</div></div>
+    </div>
+    <div class="card p-7 max-w-4xl mx-auto reveal"><div class="text-xl muted">Her work combines scientific achievement, public responsibility, and global influence.</div></div>
+  </div>
+</section>
+
+<section class="slide" data-slide="10">
+  <div class="gradient-mesh"><div class="blob" style="width:460px;height:460px;right:-100px;top:-100px;background:var(--color-accent-2);opacity:.16"></div><div class="blob" style="width:320px;height:320px;left:-80px;bottom:-80px;background:var(--color-accent-1);opacity:.12"></div><div class="blob" style="width:220px;height:220px;left:18%;top:16%;background:var(--color-accent-3);opacity:.10"></div></div>
+  <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1"></canvas>
+  <div class="content text-center">
+    <div class="eyebrow mb-6 reveal">Thank you</div>
+    <h2 class="headline text-[clamp(3.4rem,6.2vw,5.6rem)] mb-4 reveal">Jennifer Doudna</h2>
+    <p class="text-[clamp(1.05rem,1.7vw,1.25rem)] muted max-w-3xl mx-auto reveal">Jennifer Doudna • Nobel Prize in Chemistry 2020</p>
+  </div>
+</section>
+
+</div>
+<div class="nav-controls" aria-label="Slide navigation"><button class="nav-btn" onclick="changeSlide(-1)" aria-label="Previous slide">&#8249;</button><div class="slide-dots" id="dots"></div><button class="nav-btn" onclick="changeSlide(1)" aria-label="Next slide">&#8250;</button><span class="slide-counter" id="counter">1 / 10</span></div>
+<script>
+let current=1;const total=document.querySelectorAll('.slide').length;const dotsContainer=document.getElementById('dots');const counter=document.getElementById('counter');for(let i=1;i<=total;i++){const dot=document.createElement('div');dot.className='dot'+(i===1?' active':'');dot.onclick=()=>goToSlide(i);dotsContainer.appendChild(dot)}function goToSlide(n){const prev=document.querySelector('.slide.active');const next=document.querySelector(`.slide[data-slide="${n}"]`);if(prev)prev.classList.remove('active');if(next){next.classList.add('active');animateSlide(next)}current=n;updateNav()}function changeSlide(dir){let next=current+dir;if(next<1)next=total;if(next>total)next=1;goToSlide(next)}function updateNav(){document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i+1===current));counter.textContent=current+' / '+total}document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();changeSlide(1)}if(e.key==='ArrowLeft'){e.preventDefault();changeSlide(-1)}});let touchStartX=0;document.addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX});document.addEventListener('touchend',e=>{const diff=touchStartX-e.changedTouches[0].clientX;if(Math.abs(diff)>50)changeSlide(diff>0?1:-1)});function animateSlide(slide){slide.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transition='none';el.style.opacity='0';el.style.transform='translateY(20px)';el.offsetHeight;const delay=i*.08;el.style.transition=`opacity .35s ease ${delay}s, transform .35s ease ${delay}s`;el.style.opacity='1';el.style.transform='translateY(0px)'});animateSlideEffects(slide)}function animateSlideEffects(slide){slide.querySelectorAll('.bar-fill:not(.fill-init)').forEach((bar,i)=>{bar.classList.add('fill-init');bar.style.width='0%';bar.style.transition=`width .8s ease ${i*.08}s`;bar.offsetHeight;bar.style.width=bar.dataset.width+'%'})}document.addEventListener('mousemove',e=>{const spotlight=document.querySelector('.mouse-spotlight');if(spotlight)spotlight.style.background=`radial-gradient(620px circle at ${e.clientX}px ${e.clientY}px, rgba(105,210,207,.06), transparent 40%)`});window.initParticles=function(canvas,options){if(!canvas)return;const ctx=canvas.getContext('2d');canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;const interactive=options.interactive!==false;const count=options.count||(interactive?50:18);let mx=-1000,my=-1000;const particles=Array.from({length:count},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,size:Math.random()*2.4+.7,alpha:Math.random()*.26+.08}));if(interactive){canvas.addEventListener('mousemove',e=>{const rect=canvas.getBoundingClientRect();mx=e.clientX-rect.left;my=e.clientY-rect.top});canvas.addEventListener('mouseleave',()=>{mx=-1000;my=-1000})}(function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{if(interactive){const dx=p.x-mx,dy=p.y-my,dist=Math.sqrt(dx*dx+dy*dy)||1;if(dist<120){const force=(120-dist)/120*1.5;p.vx+=(dx/dist)*force*.08;p.vy+=(dy/dist)*force*.08}}p.vx*=.985;p.vy*=.985;p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fillStyle=`rgba(105,210,207,${p.alpha})`;ctx.fill()});requestAnimationFrame(animate)})()};document.querySelectorAll('.particle-canvas').forEach(c=>window.initParticles(c,{interactive:true,count:50}));document.querySelectorAll('.particle-canvas-ambient').forEach(c=>window.initParticles(c,{interactive:false,count:18}));try{animateSlide(document.querySelector('.slide.active'))}catch(e){}
+</script>
+</body>
+</html>
